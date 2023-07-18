@@ -6,7 +6,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     className?: any;
     childrean?: any;
     href?: any;
-    color?: any
+    color?: any;
 }
 
 export default ButtonProps;

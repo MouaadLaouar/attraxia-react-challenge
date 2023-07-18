@@ -19,7 +19,7 @@ const Button: FC<ButtonProps> = ({
                 className={className}
                 size={size}
                 variant={variant}
-                color={ color }
+                color={color}
                 {...rest}
             >
                 {children}

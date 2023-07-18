@@ -64,20 +64,20 @@ const ButtonTheme = createTheme({
                 {
                     props: { size: "lg" },
                     style: {
-                        fontSize: "30px"
-                    }
+                        fontSize: "30px",
+                    },
                 },
                 {
                     props: { size: "md" },
                     style: {
-                        fontSize: "20px"
-                    }
+                        fontSize: "20px",
+                    },
                 },
                 {
                     props: { size: "sm" },
                     style: {
-                        fontSize: "15px"
-                    }
+                        fontSize: "15px",
+                    },
                 },
             ],
         },
