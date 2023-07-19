@@ -4,7 +4,8 @@ import "./Home.css";
 import support from "../../assets/Support Forum icon.png";
 import Button from "../../components/Button";
 import arrow from "../../assets/arrow.png";
-import TextField from "../../components/TextFIeld";
+// import TextField from "../../components/TextFIeld";
+import Status from "../../components/Status";
 
 const Home = () => {
     return (
@@ -22,12 +23,16 @@ const Home = () => {
                     <Button variant="text2" size="sm">
                         Browse Forums <img className="arrow" src={arrow} />
                     </Button>
-                    <TextField label="hello" variant="outlined" />
+                    <input type="text" />
                 </main>
             </Container>
 
             <Container sx={{ backgroundColor: "#FFFFFF", marginTop: "30px" }}>
-                hello
+                <div className="Status">
+                    <Status state="feedback" />
+                    <Status state="open" />
+                    <Status state="resolved" />
+                </div>
             </Container>
         </div>
     );

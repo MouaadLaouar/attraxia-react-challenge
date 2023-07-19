@@ -22,3 +22,11 @@ main > * {
 .arrow {
     margin: 0px 5px;
 }
+
+.Status {
+    display: flex;
+}
+
+.Status > * {
+    margin: 0px 10px;
+}

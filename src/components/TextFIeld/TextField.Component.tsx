@@ -8,6 +8,7 @@ const TextField: FC<InputType> = ({
     label,
     id,
     type,
+    variant,
     inputProps,
     ...rest
 }) => {
@@ -18,6 +19,7 @@ const TextField: FC<InputType> = ({
                 className={className}
                 label={label}
                 type={type}
+                variant={variant}
                 inputProps={inputProps}
                 {...rest}
             />
