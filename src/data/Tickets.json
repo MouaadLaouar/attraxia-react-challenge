@@ -1,0 +1,514 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Issue with login",
+            "subtitle": "Unable to log in to the website",
+            "status": "open",
+            "date": {
+                "day": 12,
+                "month": "July",
+                "hours": 15
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image1.jpg",
+                    "name": "John Doe"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Payment discrepancy",
+            "subtitle": "Incorrect charges on the invoice",
+            "status": "feedback",
+            "date": {
+                "day": 14,
+                "month": "July",
+                "hours": 10
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image2.jpg",
+                    "name": "Jane Smith"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Website layout issue",
+            "subtitle": "Elements are overlapping on the homepage",
+            "status": "resolved",
+            "date": {
+                "day": 16,
+                "month": "July",
+                "hours": 13
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image3.jpg",
+                    "name": "David Johnson"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Mobile app crashing",
+            "subtitle": "App crashes upon opening",
+            "status": "open",
+            "date": {
+                "day": 18,
+                "month": "July",
+                "hours": 9
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image4.jpg",
+                    "name": "Sarah Williams"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Feature request",
+            "subtitle": "Requesting a dark mode feature",
+            "status": "feedback",
+            "date": {
+                "day": 20,
+                "month": "July",
+                "hours": 16
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image5.jpg",
+                    "name": "Robert Davis"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Shipping delay",
+            "subtitle": "Order #123456 has not shipped yet",
+            "status": "open",
+            "date": {
+                "day": 22,
+                "month": "July",
+                "hours": 11
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image6.jpg",
+                    "name": "Emma Thompson"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Broken link on the website",
+            "subtitle": "Link to Terms and Conditions is broken",
+            "status": "resolved",
+            "date": {
+                "day": 23,
+                "month": "July",
+                "hours": 14
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image7.jpg",
+                    "name": "Christopher Brown"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Wrong product shipped",
+            "subtitle": "Received product doesn't match the order",
+            "status": "open",
+            "date": {
+                "day": 25,
+                "month": "July",
+                "hours": 10
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image8.jpg",
+                    "name": "Olivia Johnson"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Error in checkout process",
+            "subtitle": "Unable to complete the purchase",
+            "status": "feedback",
+            "date": {
+                "day": 27,
+                "month": "July",
+                "hours": 15
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image9.jpg",
+                    "name": "Daniel Wilson"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Missing order",
+            "subtitle": "Order #789012 is missing from the delivery",
+            "status": "resolved",
+            "date": {
+                "day": 29,
+                "month": "July",
+                "hours": 12
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image10.jpg",
+                    "name": "Ava Anderson"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "title": "App freezing issue",
+            "subtitle": "App becomes unresponsive after a few minutes",
+            "status": "open",
+            "date": {
+                "day": 31,
+                "month": "July",
+                "hours": 11
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image11.jpg",
+                    "name": "James Thompson"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "title": "Website not loading",
+            "subtitle": "Unable to access the website",
+            "status": "feedback",
+            "date": {
+                "day": 2,
+                "month": "August",
+                "hours": 9
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image12.jpg",
+                    "name": "Sophia Davis"
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "title": "Wrong pricing on products",
+            "subtitle": "Prices are different than advertised",
+            "status": "resolved",
+            "date": {
+                "day": 4,
+                "month": "August",
+                "hours": 14
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image13.jpg",
+                    "name": "Benjamin Wilson"
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "title": "Poor customer service",
+            "subtitle": "Unhelpful support staff",
+            "status": "open",
+            "date": {
+                "day": 6,
+                "month": "August",
+                "hours": 16
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image14.jpg",
+                    "name": "Isabella Johnson"
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "title": "Broken image on product page",
+            "subtitle": "Product image doesn't load on the website",
+            "status": "feedback",
+            "date": {
+                "day": 8,
+                "month": "August",
+                "hours": 10
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image15.jpg",
+                    "name": "William Anderson"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "title": "Missing refund",
+            "subtitle": "Refund for order #345678 not received",
+            "status": "resolved",
+            "date": {
+                "day": 10,
+                "month": "August",
+                "hours": 13
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image16.jpg",
+                    "name": "Mia Davis"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "title": "Feature request",
+            "subtitle": "Requesting a search filter for products",
+            "status": "open",
+            "date": {
+                "day": 12,
+                "month": "August",
+                "hours": 11
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image17.jpg",
+                    "name": "Alexander Thompson"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "title": "Delayed response from support",
+            "subtitle": "Still waiting for a reply from customer support",
+            "status": "feedback",
+            "date": {
+                "day": 14,
+                "month": "August",
+                "hours": 9
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image18.jpg",
+                    "name": "Ella Wilson"
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "title": "Incorrect product description",
+            "subtitle": "Product details don't match the actual item",
+            "status": "resolved",
+            "date": {
+                "day": 16,
+                "month": "August",
+                "hours": 15
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image19.jpg",
+                    "name": "Noah Brown"
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "title": "Order cancellation",
+            "subtitle": "Need to cancel order #567890",
+            "status": "open",
+            "date": {
+                "day": 18,
+                "month": "August",
+                "hours": 14
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image20.jpg",
+                    "name": "Sophia Johnson"
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "title": "Slow response time",
+            "subtitle": "Website takes too long to load",
+            "status": "feedback",
+            "date": {
+                "day": 20,
+                "month": "August",
+                "hours": 12
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image21.jpg",
+                    "name": "Liam Davis"
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "title": "Product return request",
+            "subtitle": "Need to return product #234567",
+            "status": "resolved",
+            "date": {
+                "day": 22,
+                "month": "August",
+                "hours": 11
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image22.jpg",
+                    "name": "Avery Thompson"
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "title": "Unable to add item to cart",
+            "subtitle": "Error when trying to add item to the cart",
+            "status": "open",
+            "date": {
+                "day": 24,
+                "month": "August",
+                "hours": 9
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image23.jpg",
+                    "name": "Abigail Wilson"
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "title": "Missing warranty information",
+            "subtitle": "Product delivered without warranty details",
+            "status": "feedback",
+            "date": {
+                "day": 26,
+                "month": "August",
+                "hours": 15
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image24.jpg",
+                    "name": "Henry Johnson"
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "title": "Shipping address change",
+            "subtitle": "Need to change the shipping address for order #345678",
+            "status": "resolved",
+            "date": {
+                "day": 28,
+                "month": "August",
+                "hours": 10
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image25.jpg",
+                    "name": "Charlotte Davis"
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "title": "Product recommendation",
+            "subtitle": "Looking for recommendations on headphones",
+            "status": "open",
+            "date": {
+                "day": 30,
+                "month": "August",
+                "hours": 14
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image26.jpg",
+                    "name": "Sebastian Thompson"
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "title": "Incorrect order quantity",
+            "subtitle": "Received more items than ordered",
+            "status": "feedback",
+            "date": {
+                "day": 1,
+                "month": "September",
+                "hours": 12
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image27.jpg",
+                    "name": "Amelia Wilson"
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "title": "Promo code not working",
+            "subtitle": "Promotional code is not applying the discount",
+            "status": "resolved",
+            "date": {
+                "day": 3,
+                "month": "September",
+                "hours": 11
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image28.jpg",
+                    "name": "Lucas Johnson"
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "title": "Unable to reset password",
+            "subtitle": "Forgot password and not receiving reset email",
+            "status": "open",
+            "date": {
+                "day": 5,
+                "month": "September",
+                "hours": 9
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image29.jpg",
+                    "name": "Victoria Davis"
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "title": "Late delivery",
+            "subtitle": "Order #901234 not delivered within the promised timeframe",
+            "status": "feedback",
+            "date": {
+                "day": 7,
+                "month": "September",
+                "hours": 16
+            },
+            "replies": [
+                {
+                    "img": "https://example.com/image30.jpg",
+                    "name": "Jackson Thompson"
+                }
+            ]
+        }
+    ]
+}

@@ -30,3 +30,24 @@ main > * {
 .Status > * {
     margin: 0px 10px;
 }
+
+.AppBar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.AppBar > h1 {
+    font-size: 16px;
+}
+
+.AppBar > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.AppBar > div > p {
+    margin-right: 50px;
+}

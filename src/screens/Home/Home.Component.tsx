@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import arrow from "../../assets/arrow.png";
 import Status from "../../components/Status";
 import TextField from "../../components/TextFIeld/TextField.Component";
+import Data from "../../data/Tickets.json";
 
 const Home = () => {
     return (
@@ -28,14 +29,14 @@ const Home = () => {
             </Container>
 
             <Container sx={{ backgroundColor: "#FFFFFF", marginTop: "30px" }}>
-                <div className="Status">
-                    <Status status="feedback" />
-                    <Status status="open" />
-                    <Status status="resolved" />
+                <div className="AppBar">
+                    <h1>My Tickets</h1>
+                    <div>
+                        <p>hello world</p>
+                        <TextField />
+                    </div>
                 </div>
-                <div className="TextField">
-                    <TextField />
-                </div>
+                <hr />
             </Container>
         </div>
     );
