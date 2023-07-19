@@ -2,7 +2,7 @@ export interface Ticket {
     id: number;
     title: string;
     subtitle: string;
-    status: "open" | "feedback" | "resolved";
+    status: "open" | "feedback" | "resolved" | string;
     date: {
         day: number;
         month: string;

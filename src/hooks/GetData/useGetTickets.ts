@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Ticket } from "../../types/Ticket";
 
 const useGetTickets = (Data: Ticket[]) => {
@@ -7,31 +7,27 @@ const useGetTickets = (Data: Ticket[]) => {
     const [FeedbackSum, SetFeedbackSum] = useState(0);
     const [ResolvedSum, SetResolvedSum] = useState(0);
 
-    setSum(Data.length);
+    useEffect(() => {
+        setSum(Data.length);
 
-    // get the sum of the open
-    for (let i = 0; i < Data.length; i++) {
-        const item = Data[i];
-        if (item.status === "open") {
-            SetOpenSum(OpenSum + 1);
-        }
-    }
+        let openCount = 0;
+        let feedbackCount = 0;
+        let resolvedCount = 0;
 
-    // get the sum of the Feedback
-    for (let i = 0; i < Data.length; i++) {
-        const item = Data[i];
-        if (item.status === "feedback") {
-            SetFeedbackSum(FeedbackSum + 1);
-        }
-    }
+        Data.forEach((item) => {
+            if (item.status === "open") {
+                openCount++;
+            } else if (item.status === "feedback") {
+                feedbackCount++;
+            } else if (item.status === "resolved") {
+                resolvedCount++;
+            }
+        });
 
-    // get the sum of the resolved
-    for (let i = 0; i < Data.length; i++) {
-        const item = Data[i];
-        if (item.status === "resolved") {
-            SetResolvedSum(ResolvedSum + 1);
-        }
-    }
+        SetOpenSum(openCount);
+        SetFeedbackSum(feedbackCount);
+        SetResolvedSum(resolvedCount);
+    }, [Data]);
 
     return {
         Sum,
