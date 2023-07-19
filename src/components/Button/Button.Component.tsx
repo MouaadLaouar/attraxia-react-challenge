@@ -1,7 +1,7 @@
 import { FC } from "react";
-import ButtonProps from "./Button.type";
+import ButtonProps from "./Button.Type";
 import { Button as ButtonMui, ThemeProvider } from "@mui/material";
-import ButtonTheme from "./Button.style";
+import ButtonTheme from "./Button.Style";
 
 const Button: FC<ButtonProps> = ({
     children,

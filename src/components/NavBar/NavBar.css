@@ -1,0 +1,14 @@
+.NavBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+.NavBar > div {
+    display: flex;
+}
+
+.logo {
+    margin-right: 5px;
+}

@@ -59,6 +59,7 @@ const ButtonTheme = createTheme({
                         backgroundColor: "rgba(40, 110, 241, 1)",
                         fontWeight: 700,
                         fontSize: "13px",
+                        borderRadius: "4px",
                     },
                 },
                 {
