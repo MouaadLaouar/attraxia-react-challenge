@@ -1,20 +1,6 @@
-import React from "react";
-import {
-    FilledTextFieldProps,
-    OutlinedTextFieldProps,
-    StandardTextFieldProps,
-} from "@mui/material";
+export type VariantTextField = "search";
 
-interface Input extends React.HTMLAttributes<HTMLInputElement> {
+export interface TextFieldProps {
+    variant?: VariantTextField;
     className?: any;
-    label?: any;
-    childrean?: any;
-    id?: any;
-    type?: any;
-    inputProps?: any;
 }
-
-type InputType = Input &
-    (FilledTextFieldProps | OutlinedTextFieldProps | StandardTextFieldProps);
-
-export default InputType;

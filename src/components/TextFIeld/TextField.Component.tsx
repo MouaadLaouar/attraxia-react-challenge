@@ -1,30 +1,9 @@
-import { TextField as TextFieldMui, ThemeProvider } from "@mui/material";
 import { FC } from "react";
-import InputType from "./TextField.Type";
-import TextFieldTheme from "./TextField.Style";
+import { TextFieldStyle } from "./TextField.Style";
+import { TextFieldProps } from "./TextField.Type";
 
-const TextField: FC<InputType> = ({
-    className,
-    label,
-    id,
-    type,
-    variant,
-    inputProps,
-    ...rest
-}) => {
-    return (
-        <ThemeProvider theme={TextFieldTheme}>
-            <TextFieldMui
-                id={id}
-                className={className}
-                label={label}
-                type={type}
-                variant={variant}
-                inputProps={inputProps}
-                {...rest}
-            />
-        </ThemeProvider>
-    );
+const TextField: FC<TextFieldProps> = ({ className, variant = "search" }) => {
+    return <TextFieldStyle className={className} variant={variant}/>;
 };
 
 export default TextField;

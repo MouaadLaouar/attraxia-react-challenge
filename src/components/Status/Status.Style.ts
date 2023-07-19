@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
-import { Variant } from "./Status.Type";
+import { VariantStatus } from "./Status.Type";
 
-export const variantStyle: Record<string, React.CSSProperties> = {
+const variantStyle: Record<string, React.CSSProperties> = {
     open: {
         backgroundColor: "rgba(40, 110, 241, 1)",
     },
@@ -13,15 +13,17 @@ export const variantStyle: Record<string, React.CSSProperties> = {
     },
 };
 
-export const StatusStyle = styled("div")<{ state: Variant }>(({ state }) => ({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "5px 10px",
-    borderRadius: 14,
-    fontSize: 14,
-    fontWeight: 400,
-    fontFamily: "Robot",
-    color: "rgba(255, 255, 255, 1)",
-    ...variantStyle[state],
-}));
+export const StatusStyle = styled("div")<{ status: VariantStatus }>(
+    ({ status }) => ({
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "5px 10px",
+        borderRadius: 14,
+        fontSize: 14,
+        fontWeight: 400,
+        fontFamily: "Robot",
+        color: "rgba(255, 255, 255, 1)",
+        ...variantStyle[status],
+    }),
+);

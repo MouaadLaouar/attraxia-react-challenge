@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import arrow from "../../assets/arrow.png";
 // import TextField from "../../components/TextFIeld";
 import Status from "../../components/Status";
+import TextField from "../../components/TextFIeld/TextField.Component";
 
 const Home = () => {
     return (
@@ -23,15 +24,18 @@ const Home = () => {
                     <Button variant="text2" size="sm">
                         Browse Forums <img className="arrow" src={arrow} />
                     </Button>
-                    <input type="text" />
+                    <input type="text" placeholder="kdjk!" />
                 </main>
             </Container>
 
             <Container sx={{ backgroundColor: "#FFFFFF", marginTop: "30px" }}>
                 <div className="Status">
-                    <Status state="feedback" />
-                    <Status state="open" />
-                    <Status state="resolved" />
+                    <Status status="feedback" />
+                    <Status status="open" />
+                    <Status status="resolved" />
+                </div>
+                <div className="TextField">
+                    <TextField />
                 </div>
             </Container>
         </div>

@@ -1,6 +1,6 @@
-export type Variant = "open" | "resolved" | "feedback";
+export type VariantStatus = "open" | "resolved" | "feedback";
 
 export interface StatusProps {
-    state?: Variant;
+    status?: VariantStatus;
     className?: any;
 }
