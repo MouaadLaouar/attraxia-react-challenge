@@ -4,7 +4,6 @@ import "./Home.css";
 import support from "../../assets/Support Forum icon.png";
 import Button from "../../components/Button";
 import arrow from "../../assets/arrow.png";
-// import TextField from "../../components/TextFIeld";
 import Status from "../../components/Status";
 import TextField from "../../components/TextFIeld/TextField.Component";
 
@@ -24,7 +23,7 @@ const Home = () => {
                     <Button variant="text2" size="sm">
                         Browse Forums <img className="arrow" src={arrow} />
                     </Button>
-                    <input type="text" placeholder="kdjk!" />
+                    <TextField />
                 </main>
             </Container>
 
