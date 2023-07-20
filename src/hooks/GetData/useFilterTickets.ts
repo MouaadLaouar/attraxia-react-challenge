@@ -8,24 +8,23 @@ const useFilterTickets = (Data: Ticket[], Filter: string) => {
         // eslint-disable-next-line prefer-const
         let arr: Ticket[] = [];
 
-        Data.forEach((item) => {
-            if (Filter === ("" || "open" || "feedback" || "resolved")) {
-                if (item.status === Filter) {
-                    arr.push(item);
-                } else {
-                    arr.push(item);
-                }
+        const isPredefinedFilter =
+            Filter === "open" || Filter === "feedback" || Filter === "resolved";
+
+        arr = Data.filter((item) => {
+            if (isPredefinedFilter) {
+                return item.status === Filter;
+            } else if (Filter === "") {
+                return item;
             } else {
-                if (item.title.includes(Filter)) {
-                    arr.push(item);
-                }
+                return item.title.includes(Filter);
             }
         });
 
         setNewData(arr);
     }, [Data, Filter]);
 
-    return NewData;
+    return { NewData };
 };
 
 export default useFilterTickets;

@@ -11,6 +11,7 @@ import { useState } from "react";
 
 // table
 import { FormControl, Select, MenuItem } from "@mui/material";
+import Table from "../../components/Table/Table.Component";
 
 // hooks
 import useGetTickets from "../../hooks/GetData/useGetTickets";
@@ -24,7 +25,7 @@ const Home = () => {
     const [SelectValue, setSelectValue] = useState("");
     const [TextFieldValue, setTextFieldValue] = useState("");
     const [Value, setValue] = useState("");
-    const filteredData = useFilterTickets(Data.data, Value);
+    const { NewData } = useFilterTickets(Data.data, Value);
 
     const handleChange = (e: any) => {
         setSelectValue(e.target.value);
@@ -84,7 +85,7 @@ const Home = () => {
                     </div>
                 </div>
                 <hr />
-                hell
+                <Table Data={NewData} search={TextFieldValue} />
             </Container>
         </div>
     );
