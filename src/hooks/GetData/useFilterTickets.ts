@@ -11,11 +11,13 @@ const useFilterTickets = (Data: Ticket[], status: string) => {
         Data.forEach((item) => {
             if (item.status === status) {
                 arr.push(item);
+            } else if (status === "") {
+                arr.push(item);
             }
         });
 
         setNewData(arr);
-    }, []);
+    }, [Data, status]);
 
     return NewData;
 };

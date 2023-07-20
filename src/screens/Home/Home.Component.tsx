@@ -7,6 +7,7 @@ import arrow from "../../assets/arrow.png";
 import Status from "../../components/Status";
 import TextField from "../../components/TextFIeld/TextField.Component";
 import Data from "../../data/Tickets.json";
+import { useState } from "react";
 
 // table
 import { FormControl, Select, MenuItem } from "@mui/material";
@@ -16,10 +17,16 @@ import useGetTickets from "../../hooks/GetData/useGetTickets";
 import useFilterTickets from "../../hooks/GetData/useFilterTickets";
 
 const Home = () => {
-    // const { Sum, OpenSum, FeedbackSum, ResolvedSum } = useGetTickets(Data.data);
+    const { Sum, OpenSum, FeedbackSum, ResolvedSum } = useGetTickets(Data.data);
     // console.log({ Sum, OpenSum, FeedbackSum, ResolvedSum });
     // const hello = useFilterTickets(Data.data, "open");
     // console.log(hello);
+    const [value, setvalue] = useState("");
+    const filteredData = useFilterTickets(Data.data, value);
+
+    const handleChange = (e: any) => {
+        setvalue(e.target.value);
+    };
 
     return (
         <div className="Home">
@@ -44,7 +51,27 @@ const Home = () => {
                 <div className="AppBar">
                     <h1>My Tickets</h1>
                     <div>
-                        <p>hello world</p>
+                        <FormControl sx={{ marginRight: 3 }}>
+                            <Select
+                                value={value}
+                                onChange={handleChange}
+                                displayEmpty
+                                inputProps={{ "aria-label": "Without label" }}
+                            >
+                                <MenuItem value="">
+                                    <em>All - {Sum}</em>
+                                </MenuItem>
+                                <MenuItem value="open">
+                                    open - {OpenSum}
+                                </MenuItem>
+                                <MenuItem value="feedback">
+                                    feedback - {FeedbackSum}
+                                </MenuItem>
+                                <MenuItem value="resolved">
+                                    resolved - {ResolvedSum}
+                                </MenuItem> 
+                            </Select>
+                        </FormControl>
                         <TextField />
                     </div>
                 </div>
