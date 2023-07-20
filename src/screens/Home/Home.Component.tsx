@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import NavBar from "../../components/NavBar/NavBar.Components";
 import "./Home.css";
 import support from "../../assets/Support Forum icon.png";
@@ -54,7 +54,7 @@ const Home = () => {
                 <div className="AppBar">
                     <h1>My Tickets</h1>
                     <div>
-                        <FormControl sx={{ marginRight: 3 }}>
+                        <FormControl sx={{ marginRight: 3, width: "150px" }}>
                             <Select
                                 value={SelectValue}
                                 onChange={handleChange}
@@ -62,16 +62,27 @@ const Home = () => {
                                 inputProps={{ "aria-label": "Without label" }}
                             >
                                 <MenuItem value="">
-                                    <em>All - {Sum}</em>
+                                    <div className="round All">
+                                        <p>All</p> <span>{Sum}</span>
+                                    </div>
                                 </MenuItem>
                                 <MenuItem value="open">
-                                    open - {OpenSum}
+                                    <div className="round open">
+                                        <p>open</p>
+                                        <span>{OpenSum}</span>
+                                    </div>
                                 </MenuItem>
                                 <MenuItem value="feedback">
-                                    feedback - {FeedbackSum}
+                                    <div className="round feedback">
+                                        <p>feedback</p>
+                                        <span>{FeedbackSum}</span>
+                                    </div>
                                 </MenuItem>
                                 <MenuItem value="resolved">
-                                    resolved - {ResolvedSum}
+                                    <div className="round resolved">
+                                        <p>resolved</p>
+                                        <span>{ResolvedSum}</span>
+                                    </div>
                                 </MenuItem>
                             </Select>
                         </FormControl>

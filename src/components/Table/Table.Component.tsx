@@ -9,12 +9,12 @@ import {
     TableRow,
     TableBody,
     TableCell,
+    TablePagination,
 } from "@mui/material";
 import Status from "../Status/Status.Component";
 import Profil from "../../assets/profile.png";
 
 const Table: FC<TableType> = ({ Data, search }) => {
-    console.log(Data);
     if (Data.length === 0) {
         return <>{search ? <NotFound search={search} /> : <NotFound />}</>;
     } else {
