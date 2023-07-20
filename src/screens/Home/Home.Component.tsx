@@ -69,7 +69,7 @@ const Home = () => {
                                 </MenuItem>
                                 <MenuItem value="resolved">
                                     resolved - {ResolvedSum}
-                                </MenuItem> 
+                                </MenuItem>
                             </Select>
                         </FormControl>
                         <TextField />
