@@ -21,11 +21,14 @@ const Home = () => {
     // console.log({ Sum, OpenSum, FeedbackSum, ResolvedSum });
     // const hello = useFilterTickets(Data.data, "open");
     // console.log(hello);
-    const [value, setvalue] = useState("");
-    const filteredData = useFilterTickets(Data.data, value);
+    const [SelectValue, setSelectValue] = useState("");
+    const [TextFieldValue, setTextFieldValue] = useState("");
+    const [Value, setValue] = useState("");
+    const filteredData = useFilterTickets(Data.data, Value);
 
     const handleChange = (e: any) => {
-        setvalue(e.target.value);
+        setSelectValue(e.target.value);
+        setValue(SelectValue);
     };
 
     return (
@@ -53,7 +56,7 @@ const Home = () => {
                     <div>
                         <FormControl sx={{ marginRight: 3 }}>
                             <Select
-                                value={value}
+                                value={SelectValue}
                                 onChange={handleChange}
                                 displayEmpty
                                 inputProps={{ "aria-label": "Without label" }}
@@ -72,10 +75,16 @@ const Home = () => {
                                 </MenuItem>
                             </Select>
                         </FormControl>
-                        <TextField />
+                        <TextField
+                            onChange={(e: any) => {
+                                setTextFieldValue(e.target.value);
+                                setValue(TextFieldValue);
+                            }}
+                        />
                     </div>
                 </div>
                 <hr />
+                hell
             </Container>
         </div>
     );

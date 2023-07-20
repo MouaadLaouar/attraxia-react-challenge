@@ -4,9 +4,19 @@ import { TextFieldProps } from "./TextField.Type";
 import logo from "../../assets/search.png";
 import "./TextField.css";
 
-const TextField: FC<TextFieldProps> = ({ className, variant = "search" }) => {
+const TextField: FC<TextFieldProps> = ({
+    className,
+    variant = "search",
+    ref,
+    ...props
+}) => {
     return (
-        <TextFieldStyle className={className} variant={variant}>
+        <TextFieldStyle
+            ref={ref}
+            className={className}
+            variant={variant}
+            {...props}
+        >
             {variant === "search" ? <img src={logo} /> : ""}
             <input className="Input" placeholder={variant} />
         </TextFieldStyle>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Ticket } from "../../types/Ticket";
 
-const useFilterTickets = (Data: Ticket[], status: string) => {
+const useFilterTickets = (Data: Ticket[], Filter: string) => {
     const [NewData, setNewData] = useState<Ticket[]>([]);
 
     useEffect(() => {
@@ -9,15 +9,21 @@ const useFilterTickets = (Data: Ticket[], status: string) => {
         let arr: Ticket[] = [];
 
         Data.forEach((item) => {
-            if (item.status === status) {
-                arr.push(item);
-            } else if (status === "") {
-                arr.push(item);
+            if (Filter === ("" || "open" || "feedback" || "resolved")) {
+                if (item.status === Filter) {
+                    arr.push(item);
+                } else {
+                    arr.push(item);
+                }
+            } else {
+                if (item.title.includes(Filter)) {
+                    arr.push(item);
+                }
             }
         });
 
         setNewData(arr);
-    }, [Data, status]);
+    }, [Data, Filter]);
 
     return NewData;
 };
