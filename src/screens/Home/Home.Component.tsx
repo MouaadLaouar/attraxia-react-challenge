@@ -4,7 +4,6 @@ import "./Home.css";
 import support from "../../assets/Support Forum icon.png";
 import Button from "../../components/Button";
 import arrow from "../../assets/arrow.png";
-import Status from "../../components/Status";
 import TextField from "../../components/TextFIeld/TextField.Component";
 import Data from "../../data/Tickets.json";
 import { useState } from "react";
@@ -19,17 +18,17 @@ import useFilterTickets from "../../hooks/GetData/useFilterTickets";
 
 const Home = () => {
     const { Sum, OpenSum, FeedbackSum, ResolvedSum } = useGetTickets(Data.data);
-    // console.log({ Sum, OpenSum, FeedbackSum, ResolvedSum });
-    // const hello = useFilterTickets(Data.data, "open");
-    // console.log(hello);
+
     const [SelectValue, setSelectValue] = useState("");
     const [TextFieldValue, setTextFieldValue] = useState("");
+
     const [Value, setValue] = useState("");
+
     const { NewData } = useFilterTickets(Data.data, Value);
 
     const handleChange = (e: any) => {
         setSelectValue(e.target.value);
-        setValue(SelectValue);
+        setValue(e.target.value);
     };
 
     return (
@@ -51,7 +50,7 @@ const Home = () => {
                 </main>
             </Container>
 
-            <Container sx={{ backgroundColor: "#FFFFFF", marginTop: "30px" }}>
+            <Container sx={{ backgroundColor: "#FFFFFF", marginY: "50px" }}>
                 <div className="AppBar">
                     <h1>My Tickets</h1>
                     <div>
@@ -79,7 +78,7 @@ const Home = () => {
                         <TextField
                             onChange={(e: any) => {
                                 setTextFieldValue(e.target.value);
-                                setValue(TextFieldValue);
+                                setValue(e.target.value);
                             }}
                         />
                     </div>

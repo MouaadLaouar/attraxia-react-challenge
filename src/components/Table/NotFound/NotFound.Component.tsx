@@ -10,7 +10,7 @@ const NotFound: FC<NotFoundType> = ({ search }) => {
             {search ? (
                 <div className="NotFound">
                     <img src={IMG2} />
-                    <h1>No tickets found for {search}</h1>
+                    <h1>No tickets found for &quot;{search}&quot;</h1>
                     <p>Please adjust your search term and try again.</p>
                 </div>
             ) : (
