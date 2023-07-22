@@ -4,10 +4,12 @@ import "./Home.css";
 import support from "../../assets/Support Forum icon.png";
 import { Button } from "@mui/material";
 import arrow from "../../assets/arrow.png";
-import TextField from "../../components/TextFIeld/TextField.Component";
 import Data from "../../data/Tickets.json";
 import { useState } from "react";
 import * as Style from "./Home.Style";
+import searchLogo from "../../assets/search.png";
+
+import SearchText from "../../components/TextFIeld/SearchText/SearchText.Component";
 
 // table
 import { FormControl, Select, MenuItem } from "@mui/material";
@@ -46,7 +48,7 @@ const Home = () => {
                     <Button sx={Style.button}>
                         Browse Forums <img className="arrow" src={arrow} />
                     </Button>
-                    <TextField />
+                    <SearchText placeholder="hello" icon={searchLogo} />
                 </main>
             </Container>
 
@@ -86,7 +88,8 @@ const Home = () => {
                                 </MenuItem>
                             </Select>
                         </FormControl>
-                        <TextField
+                        <SearchText
+                            icon={searchLogo}
                             onChange={(e: any) => {
                                 setTextFieldValue(e.target.value);
                                 setValue(e.target.value);

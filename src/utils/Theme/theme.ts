@@ -28,6 +28,21 @@ const theme = createTheme({
                 },
             },
         },
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: {
+                    "& fieldset": {
+                        borderColor: "transparent", // Removes the border
+                    },
+                    "&:hover fieldset": {
+                        borderColor: "transparent", // Removes the border on hover
+                    },
+                    "&.Mui-focused fieldset": {
+                        borderColor: "transparent", // Removes the border when focused
+                    },
+                },
+            },
+        },
     },
 });
 
