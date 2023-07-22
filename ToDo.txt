@@ -1,8 +1,0 @@
-[X] use Sxprops
-[ ] REmove all .css file
-[ ] use add utils and theme foldes and changes all the from it ( use variants of material ui , don't create a new one)
-[ ] Update Hooks ( useFilterTickets )
-[ ] use Map every where
-[ ] When i use types i extend from type of @mui
-[ ] change the format of images to svg format
-[ ] add the TablePagination
