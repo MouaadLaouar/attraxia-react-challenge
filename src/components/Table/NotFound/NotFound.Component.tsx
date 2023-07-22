@@ -1,27 +1,32 @@
 import { NotFoundType } from "./NotFound.Type";
 import { FC } from "react";
+import { Box, Typography } from "@mui/material";
+import * as Style from "./NotFound.Style";
 import IMG from "../../../assets/NoTickets.png";
 import IMG2 from "../../../assets/NotTickets2.png";
-import "./index.css";
 
 const NotFound: FC<NotFoundType> = ({ search }) => {
     return (
         <>
             {search ? (
-                <div className="NotFound">
+                <Box sx={Style.NotFound}>
                     <img src={IMG2} />
-                    <h1>No tickets found for &quot;{search}&quot;</h1>
-                    <p>Please adjust your search term and try again.</p>
-                </div>
+                    <Typography variant="h1">
+                        No tickets found for &quot;{search}&quot;
+                    </Typography>
+                    <Typography>
+                        Please adjust your search term and try again.
+                    </Typography>
+                </Box>
             ) : (
-                <div className="NotFound">
+                <Box sx={Style.NotFound}>
                     <img src={IMG} />
-                    <h1>No Tickets Found!</h1>
-                    <p>
+                    <Typography variant="h1">No Tickets Found!</Typography>
+                    <Typography>
                         Your support tickets or feature requests will appear
                         here.
-                    </p>
-                </div>
+                    </Typography>
+                </Box>
             )}
         </>
     );

@@ -1,6 +1,5 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import NavBar from "../../components/NavBar/NavBar.Components";
-import "./Home.css";
 import support from "../../assets/Support Forum icon.png";
 import { Button } from "@mui/material";
 import arrow from "../../assets/arrow.png";
@@ -34,29 +33,29 @@ const Home = () => {
     };
 
     return (
-        <div className="Home">
-            <Container maxWidth="lg" sx={{ backgroundColor: "#FFFFFF" }}>
+        <Box sx={Style.Home}>
+            <Container maxWidth="lg" sx={Style.HeroSection}>
                 <NavBar />
                 <hr />
-                <main>
+                <Box component="main">
                     <img src={support} />
-                    <h1>Support Forums</h1>
-                    <p>
+                    <Typography variant="h1">Support Forums</Typography>
+                    <Typography sx={Style.Text}>
                         Search the topic you need help with in our support
                         forums.
-                    </p>
+                    </Typography>
                     <Button sx={Style.button}>
-                        Browse Forums <img className="arrow" src={arrow} />
+                        Browse Forums <img src={arrow} />
                     </Button>
-                    <SearchText placeholder="hello" icon={searchLogo} />
-                </main>
+                    <SearchText placeholder="Search" icon={searchLogo} />
+                </Box>
             </Container>
 
-            <Container sx={{ backgroundColor: "#FFFFFF", marginY: "50px" }}>
-                <div className="AppBar">
+            <Container sx={Style.TableSection}>
+                <Box sx={Style.AppBar}>
                     <h1>My Tickets</h1>
-                    <div>
-                        <FormControl sx={{ marginRight: 3, width: "150px" }}>
+                    <Box component="div">
+                        <FormControl sx={Style.FormControl}>
                             <Select
                                 value={SelectValue}
                                 onChange={handleChange}
@@ -64,27 +63,42 @@ const Home = () => {
                                 inputProps={{ "aria-label": "Without label" }}
                             >
                                 <MenuItem value="">
-                                    <div className="round All">
-                                        <p>All</p> <span>{Sum}</span>
-                                    </div>
+                                    <Box sx={Style.round}>
+                                        <p>All Tickets</p>
+                                        <Box component="span" sx={Style.All}>
+                                            {Sum}
+                                        </Box>
+                                    </Box>
                                 </MenuItem>
                                 <MenuItem value="open">
-                                    <div className="round open">
+                                    <Box sx={Style.round}>
                                         <p>open</p>
-                                        <span>{OpenSum}</span>
-                                    </div>
+                                        <Box component="span" sx={Style.open}>
+                                            {OpenSum}
+                                        </Box>
+                                    </Box>
                                 </MenuItem>
                                 <MenuItem value="feedback">
-                                    <div className="round feedback">
+                                    <Box sx={Style.round}>
                                         <p>feedback</p>
-                                        <span>{FeedbackSum}</span>
-                                    </div>
+                                        <Box
+                                            component="span"
+                                            sx={Style.feedback}
+                                        >
+                                            {FeedbackSum}
+                                        </Box>
+                                    </Box>
                                 </MenuItem>
                                 <MenuItem value="resolved">
-                                    <div className="round resolved">
+                                    <Box sx={Style.round}>
                                         <p>resolved</p>
-                                        <span>{ResolvedSum}</span>
-                                    </div>
+                                        <Box
+                                            component="span"
+                                            sx={Style.resolved}
+                                        >
+                                            {ResolvedSum}
+                                        </Box>
+                                    </Box>
                                 </MenuItem>
                             </Select>
                         </FormControl>
@@ -95,12 +109,12 @@ const Home = () => {
                                 setValue(e.target.value);
                             }}
                         />
-                    </div>
-                </div>
+                    </Box>
+                </Box>
                 <hr />
                 <Table Data={NewData} search={TextFieldValue} />
             </Container>
-        </div>
+        </Box>
     );
 };
 

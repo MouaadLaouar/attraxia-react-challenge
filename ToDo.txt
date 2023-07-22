@@ -5,3 +5,4 @@
 [ ] use Map every where
 [ ] When i use types i extend from type of @mui
 [ ] change the format of images to svg format
+[ ] add the TablePagination

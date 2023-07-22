@@ -1,25 +1,24 @@
-import "./NavBar.css";
 import * as Style from "./NavBar.Style";
 import logo from "../../assets/logo.png";
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 
 const NavBar = () => {
     return (
-        <div className="NavBar">
-            <div>
+        <Box sx={Style.NavBar}>
+            <Box>
                 <Button variant="text">Support</Button>
                 <Button variant="text">Ressources</Button>
-            </div>
-            <div>
+            </Box>
+            <Box>
                 <Button variant="text" sx={Style.SecondButton}>
                     Need Help ?
                 </Button>
                 <Button variant="contained">
-                    <img className="logo" src={logo} />
+                    <img src={logo} />
                     Get Support
                 </Button>
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 };
 

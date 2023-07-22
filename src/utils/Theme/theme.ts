@@ -32,14 +32,21 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     "& fieldset": {
-                        borderColor: "transparent", // Removes the border
+                        borderColor: "transparent",
                     },
                     "&:hover fieldset": {
-                        borderColor: "transparent", // Removes the border on hover
+                        borderColor: "transparent",
                     },
                     "&.Mui-focused fieldset": {
-                        borderColor: "transparent", // Removes the border when focused
+                        borderColor: "transparent",
                     },
+                },
+            },
+        },
+        MuiTypography: {
+            defaultProps: {
+                variantMapping: {
+                    h1: "h1",
                 },
             },
         },

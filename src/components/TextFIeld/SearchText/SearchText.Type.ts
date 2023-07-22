@@ -1,6 +1,7 @@
-import { TextFieldProps } from "@mui/material";
+import { TextFieldProps, BoxProps } from "@mui/material";
 
-export type SearchTextType = TextFieldProps & {
-    placeholder?: string;
-    icon?: any;
-};
+export type SearchTextType = TextFieldProps &
+    BoxProps & {
+        placeholder?: string;
+        icon?: any;
+    };

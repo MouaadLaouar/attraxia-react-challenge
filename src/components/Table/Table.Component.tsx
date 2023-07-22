@@ -1,8 +1,10 @@
 import { FC } from "react";
+import * as Style from "./Table.Style";
 import { TableType } from "./Table.Type";
 import { Ticket } from "../../types/Ticket";
 import NotFound from "./NotFound/NotFound.Component";
-import "./index.css";
+import Status from "../Status/Status.Component";
+import Profil from "../../assets/profile.png";
 import {
     Table as MuiTable,
     TableHead,
@@ -10,45 +12,44 @@ import {
     TableBody,
     TableCell,
     TablePagination,
+    Typography,
 } from "@mui/material";
-import Status from "../Status/Status.Component";
-import Profil from "../../assets/profile.png";
 
 const Table: FC<TableType> = ({ Data, search }) => {
+    const tableRowHead = ["Ticket", "Status", "Created On", "Replies"];
     if (Data.length === 0) {
         return <>{search ? <NotFound search={search} /> : <NotFound />}</>;
     } else {
         return (
             <>
-                <MuiTable sx={{ minWidth: 700 }}>
+                <MuiTable sx={Style.Table}>
                     <TableHead>
-                        <TableRow sx={{ fontSize: 400 }}>
-                            <TableCell>Ticket</TableCell>
-                            <TableCell>Status</TableCell>
-                            <TableCell>Created On</TableCell>
-                            <TableCell>Replies</TableCell>
+                        <TableRow sx={Style.TableRowHead}>
+                            {tableRowHead.map((item) => (
+                                <TableCell key={tableRowHead.indexOf(item)}>
+                                    {item}
+                                </TableCell>
+                            ))}
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {Data.map((row: Ticket) => (
-                            <TableRow key={row.id}>
+                            <TableRow sx={Style.TableRowBody} key={row.id}>
                                 <TableCell>
-                                    <p className="title">{row.title}</p>
-                                    <p>{row.subtitle}</p>
+                                    <Typography sx={Style.Title}>
+                                        {row.title}
+                                    </Typography>
+                                    <Typography sx={Style.SubTitle}>
+                                        {row.subtitle}
+                                    </Typography>
                                 </TableCell>
-                                <TableCell align="left">
+                                <TableCell>
                                     <Status status={row.status} />
                                 </TableCell>
-                                <TableCell align="left">
+                                <TableCell>
                                     {row.date.month} @ {row.date.hours}
                                 </TableCell>
-                                <TableCell
-                                    sx={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                    }}
-                                    align="left"
-                                >
+                                <TableCell sx={Style.TableCellReplies}>
                                     <img className="Profil" src={Profil} />
                                     <p>Last By {row.replies[0].name}</p>
                                 </TableCell>
