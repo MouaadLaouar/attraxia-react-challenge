@@ -42,7 +42,6 @@ export const HeroSection: SxProps = {
 };
 
 export const TableSection: SxProps = {
-    backgroundColor: "#FFFFFF",
     marginY: "50px",
     "& > hr": {
         borderColor: "rgba(237, 237, 237, 1)",
@@ -59,6 +58,7 @@ export const AppBar: SxProps = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    backgroundColor: "#FFFFFF",
     "& > h1": {
         fontSize: "16px",
     },
