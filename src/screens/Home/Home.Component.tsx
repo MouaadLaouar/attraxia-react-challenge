@@ -2,16 +2,16 @@ import { Box, Container } from "@mui/material";
 import NavBar from "../../components/NavBar/NavBar.Components";
 import "./Home.css";
 import support from "../../assets/Support Forum icon.png";
-import Button from "../../components/Button";
+import { Button } from "@mui/material";
 import arrow from "../../assets/arrow.png";
 import TextField from "../../components/TextFIeld/TextField.Component";
 import Data from "../../data/Tickets.json";
 import { useState } from "react";
+import * as Style from "./Home.Style";
 
 // table
 import { FormControl, Select, MenuItem } from "@mui/material";
 import Table from "../../components/Table/Table.Component";
-
 // hooks
 import useGetTickets from "../../hooks/GetData/useGetTickets";
 import useFilterTickets from "../../hooks/GetData/useFilterTickets";
@@ -43,7 +43,7 @@ const Home = () => {
                         Search the topic you need help with in our support
                         forums.
                     </p>
-                    <Button variant="text2" size="sm">
+                    <Button sx={Style.button}>
                         Browse Forums <img className="arrow" src={arrow} />
                     </Button>
                     <TextField />

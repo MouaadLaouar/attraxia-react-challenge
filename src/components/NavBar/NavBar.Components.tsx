@@ -1,6 +1,7 @@
-import Button from "../Button";
 import "./NavBar.css";
+import * as Style from "./NavBar.Style";
 import logo from "../../assets/logo.png";
+import { Button } from "@mui/material";
 
 const NavBar = () => {
     return (
@@ -10,7 +11,9 @@ const NavBar = () => {
                 <Button variant="text">Ressources</Button>
             </div>
             <div>
-                <Button variant="text1">Need Help ?</Button>
+                <Button variant="text" sx={Style.SecondButton}>
+                    Need Help ?
+                </Button>
                 <Button variant="contained">
                     <img className="logo" src={logo} />
                     Get Support
