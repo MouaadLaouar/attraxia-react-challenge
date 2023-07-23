@@ -1,28 +1,55 @@
-import { Box, Container, Typography } from "@mui/material";
-import NavBar from "../../components/NavBar/NavBar.Components";
-import support from "../../assets/Support Forum icon.png";
-import { Button } from "@mui/material";
-import arrow from "../../assets/arrow.png";
-import Data from "../../data/Tickets.json";
 import { useState } from "react";
 import * as Style from "./Home.Style";
-import searchLogo from "../../assets/search.png";
-
+import {
+    Box,
+    Container,
+    Typography,
+    Button,
+    FormControl,
+    Select,
+    MenuItem,
+} from "@mui/material";
+import Data from "../../data/Tickets.json";
+import NavBar from "../../components/NavBar/NavBar.Components";
 import SearchText from "../../components/TextFIeld/SearchText/SearchText.Component";
-
-// table
-import { FormControl, Select, MenuItem } from "@mui/material";
 import Table from "../../components/Table/Table.Component";
-// hooks
 import useGetTickets from "../../hooks/GetData/useGetTickets";
 import useFilterTickets from "../../hooks/GetData/useFilterTickets";
+import arrow from "../../assets/arrow.png";
+import searchLogo from "../../assets/search.png";
+import support from "../../assets/Support Forum icon.png";
 
 const Home = () => {
     const { Sum, OpenSum, FeedbackSum, ResolvedSum } = useGetTickets(Data.data);
+    const menuItem = [
+        {
+            name: "All Tickets",
+            value: "",
+            sx: Style.All,
+            cpt: Sum,
+        },
+        {
+            name: "open",
+            value: "open",
+            sx: Style.open,
+            cpt: OpenSum,
+        },
+        {
+            name: "feedback",
+            value: "feedback",
+            sx: Style.feedback,
+            cpt: FeedbackSum,
+        },
+        {
+            name: "resolved",
+            value: "resolved",
+            sx: Style.resolved,
+            cpt: ResolvedSum,
+        },
+    ];
 
     const [SelectValue, setSelectValue] = useState("");
     const [TextFieldValue, setTextFieldValue] = useState("");
-
     const [Value, setValue] = useState("");
 
     const { NewData } = useFilterTickets(Data.data, Value);
@@ -62,44 +89,19 @@ const Home = () => {
                                 displayEmpty
                                 inputProps={{ "aria-label": "Without label" }}
                             >
-                                <MenuItem value="">
-                                    <Box sx={Style.round}>
-                                        <p>All Tickets</p>
-                                        <Box component="span" sx={Style.All}>
-                                            {Sum}
+                                {menuItem.map((item) => (
+                                    <MenuItem
+                                        key={menuItem.indexOf(item)}
+                                        value={item.value}
+                                    >
+                                        <Box sx={Style.round}>
+                                            <p>{item.name}</p>
+                                            <Box component="span" sx={item.sx}>
+                                                {item.cpt}
+                                            </Box>
                                         </Box>
-                                    </Box>
-                                </MenuItem>
-                                <MenuItem value="open">
-                                    <Box sx={Style.round}>
-                                        <p>open</p>
-                                        <Box component="span" sx={Style.open}>
-                                            {OpenSum}
-                                        </Box>
-                                    </Box>
-                                </MenuItem>
-                                <MenuItem value="feedback">
-                                    <Box sx={Style.round}>
-                                        <p>feedback</p>
-                                        <Box
-                                            component="span"
-                                            sx={Style.feedback}
-                                        >
-                                            {FeedbackSum}
-                                        </Box>
-                                    </Box>
-                                </MenuItem>
-                                <MenuItem value="resolved">
-                                    <Box sx={Style.round}>
-                                        <p>resolved</p>
-                                        <Box
-                                            component="span"
-                                            sx={Style.resolved}
-                                        >
-                                            {ResolvedSum}
-                                        </Box>
-                                    </Box>
-                                </MenuItem>
+                                    </MenuItem>
+                                ))}
                             </Select>
                         </FormControl>
                         <SearchText

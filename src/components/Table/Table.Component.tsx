@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import * as Style from "./Table.Style";
 import { TableType } from "./Table.Type";
 import { Ticket } from "../../types/Ticket";
@@ -18,21 +18,33 @@ import {
 
 const Table: FC<TableType> = ({ Data, search }) => {
     const tableRowHead = ["Ticket", "Status", "Created On", "Replies"];
-    const button = ["1", "2", "3"];
+    //const button = ["1", "2", "3"];
+    const [button, setbutton] = useState<string[]>([]); // <- the number of pages in the TablePagination
 
     ////
-    const [rowsPerPage, setRowsPerPage] = useState(10);
-    const [page, setPage] = useState(0);
+    const rowsPerPage: number = 10;
+    const [page, setPage] = useState<number>(0); // <- which table that i show , per default we show the first table 1
 
+    // the data that i show in the table from { startIndex } to { endIndex }
     const startIndex = page * rowsPerPage;
     const endIndex = startIndex + rowsPerPage;
 
-    const DisplayedData = Data.slice(startIndex, endIndex);
-    ////
+    const DisplayedData: Ticket[] = Data.slice(startIndex, endIndex); // <- the data that will be displayed
 
+    // this function is for change the page that we show in the table
     const changePage = (numPage: number) => {
         setPage(numPage);
     };
+
+    // her to refrech how much the number of button depend of number of pages we got
+    // and it change every time that the { Data } change
+    useEffect(() => {
+        const arr: string[] = [];
+        for (let i = 0; i < Data.length / rowsPerPage; i++) {
+            arr.push(`${i + 1}`);
+        }
+        setbutton(arr);
+    }, [Data]);
 
     if (Data.length === 0) {
         return <>{search ? <NotFound search={search} /> : <NotFound />}</>;
@@ -96,7 +108,6 @@ const Table: FC<TableType> = ({ Data, search }) => {
                         <Box sx={Style.DataCounter}>
                             {startIndex} - {endIndex} of {Data.length}
                         </Box>
-                        <Box></Box>
                     </Box>
                 </Box>
             </>

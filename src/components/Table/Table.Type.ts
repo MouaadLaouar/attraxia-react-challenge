@@ -1,7 +1,6 @@
-import { HTMLAttributes } from "react";
 import { Ticket } from "../../types/Ticket";
 
-export interface TableType extends HTMLAttributes<HTMLDivElement> {
+export interface TableType {
     Data: Ticket[];
     search?: string;
 }
