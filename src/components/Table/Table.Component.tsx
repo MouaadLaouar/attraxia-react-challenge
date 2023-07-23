@@ -12,7 +12,6 @@ import {
     Box,
     Button,
 } from "@mui/material";
-import useSort from "../../hooks/GetData/useSort";
 import Status from "../Status/Status.Component";
 import NotFound from "./NotFound/NotFound.Component";
 import Profil from "../../assets/profile.png";
@@ -33,9 +32,6 @@ const Table: FC<TableType> = ({ Data, search }) => {
     // the data that i show in the table from { startIndex } to { endIndex }
     const startIndex = page * rowsPerPage;
     const endIndex = startIndex + rowsPerPage;
-
-    const [Value, setValue] = useState<string>("");
-    const { DataSort } = useSort(Data, Value);
 
     // const DisplayedData: Ticket[] = DataSort.slice(startIndex, endIndex); // <- the data that will be displayed
     const DisplayedData: Ticket[] = Data.slice(startIndex, endIndex); // <- the data that will be displayed
@@ -66,9 +62,7 @@ const Table: FC<TableType> = ({ Data, search }) => {
                             {tableRowHead.map((item: string) => (
                                 <TableCell
                                     key={tableRowHead.indexOf(item)}
-                                    onClick={() => {
-                                        setValue(item);
-                                    }}
+                                    sx={{ cursor: "pointer" }}
                                 >
                                     {item}
                                 </TableCell>
