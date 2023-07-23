@@ -48,9 +48,9 @@ const Home = () => {
         },
     ];
 
-    const [SelectValue, setSelectValue] = useState("");
-    const [TextFieldValue, setTextFieldValue] = useState("");
-    const [Value, setValue] = useState("");
+    const [SelectValue, setSelectValue] = useState<string>("");
+    const [TextFieldValue, setTextFieldValue] = useState<string>("");
+    const [Value, setValue] = useState<string>("");
 
     const { NewData } = useFilterTickets(Data.data, Value);
 

@@ -2,9 +2,6 @@ import { FC, useState, useEffect } from "react";
 import * as Style from "./Table.Style";
 import { TableType } from "./Table.Type";
 import { Ticket } from "../../types/Ticket";
-import NotFound from "./NotFound/NotFound.Component";
-import Status from "../Status/Status.Component";
-import Profil from "../../assets/profile.png";
 import {
     Table as MuiTable,
     TableHead,
@@ -15,20 +12,32 @@ import {
     Box,
     Button,
 } from "@mui/material";
+import useSort from "../../hooks/GetData/useSort";
+import Status from "../Status/Status.Component";
+import NotFound from "./NotFound/NotFound.Component";
+import Profil from "../../assets/profile.png";
 
 const Table: FC<TableType> = ({ Data, search }) => {
-    const tableRowHead = ["Ticket", "Status", "Created On", "Replies"];
+    const tableRowHead: string[] = [
+        "Ticket",
+        "Status",
+        "Created On",
+        "Replies",
+    ];
     //const button = ["1", "2", "3"];
     const [button, setbutton] = useState<string[]>([]); // <- the number of pages in the TablePagination
 
-    ////
-    const rowsPerPage: number = 10;
+    const rowsPerPage: number = 10; // <- rows per page
     const [page, setPage] = useState<number>(0); // <- which table that i show , per default we show the first table 1
 
     // the data that i show in the table from { startIndex } to { endIndex }
     const startIndex = page * rowsPerPage;
     const endIndex = startIndex + rowsPerPage;
 
+    const [Value, setValue] = useState<string>("");
+    const { DataSort } = useSort(Data, Value);
+
+    // const DisplayedData: Ticket[] = DataSort.slice(startIndex, endIndex); // <- the data that will be displayed
     const DisplayedData: Ticket[] = Data.slice(startIndex, endIndex); // <- the data that will be displayed
 
     // this function is for change the page that we show in the table
@@ -36,7 +45,7 @@ const Table: FC<TableType> = ({ Data, search }) => {
         setPage(numPage);
     };
 
-    // her to refrech how much the number of button depend of number of pages we got
+    // here to refrech how much the number of button depend of number of pages we got
     // and it change every time that the { Data } change
     useEffect(() => {
         const arr: string[] = [];
@@ -54,8 +63,13 @@ const Table: FC<TableType> = ({ Data, search }) => {
                 <MuiTable sx={Style.Table}>
                     <TableHead>
                         <TableRow sx={Style.TableRowHead}>
-                            {tableRowHead.map((item) => (
-                                <TableCell key={tableRowHead.indexOf(item)}>
+                            {tableRowHead.map((item: string) => (
+                                <TableCell
+                                    key={tableRowHead.indexOf(item)}
+                                    onClick={() => {
+                                        setValue(item);
+                                    }}
+                                >
                                     {item}
                                 </TableCell>
                             ))}
